@@ -58,6 +58,24 @@ private fun miniMaxSum(arr : Array<Int>): Unit {
     print("$minimumSum $maximumSum")
 }
 
-fun main() {
+// 9. Example -> Birthday Cake Candles
+private fun birthdayCakeCandles(candles: Array<Int>) : Int {
+    var max = 0
+    var countOfArray = candles[0]
 
+    for (candle in candles) {
+        if (candle == max) {
+            countOfArray += 1
+        }
+        if (candle > max) {
+            max = candle
+            countOfArray = 1
+        }
+    }
+
+    return countOfArray
+}
+
+fun main() {
+    println(birthdayCakeCandles(arrayOf(5,1,6,8,4,8,3,1,1)))
 }
