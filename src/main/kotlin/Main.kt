@@ -107,6 +107,31 @@ private fun gradingStudents(grades: Array<Int>): Array<Int> {
     }.toTypedArray()
 
 }
+
+// 12. Example -> Apple and Orange
+private fun countApplesAndOranges(s: Int, t: Int, appleTreeLocation:Int, orangeTreeLocation: Int, apples: Array<Int>, oranges: Array<Int>): Unit {
+
+    var countApple = 0
+    var countOrange = 0
+
+    apples.forEach {
+        val range = appleTreeLocation + it
+        if (range in s..t) {
+            countApple++
+        }
+    }
+
+    oranges.forEach {
+        val range = orangeTreeLocation + it
+        if (range in s..t) {
+            countOrange++
+        }
+    }
+
+    println("$countApple \n$countOrange")
+
+}
+
 fun main() {
     println(gradingStudents(arrayOf(73,67,38,33)).joinToString())
 }
