@@ -93,6 +93,20 @@ private fun timeConversion(s: String): String {
 
     return "${hour.toString().padStart(2, '0')}$middle"
 }
+
+// 11. Example -> Grading Students
+private fun gradingStudents(grades: Array<Int>): Array<Int> {
+
+    return grades.map {
+        when {
+            it < 38 -> it
+            it % 5 == 3 -> it+2
+            it % 5 == 4 -> it+1
+            else -> it
+        }
+    }.toTypedArray()
+
+}
 fun main() {
-    println(timeConversion("07:05:45PM"))
+    println(gradingStudents(arrayOf(73,67,38,33)).joinToString())
 }
