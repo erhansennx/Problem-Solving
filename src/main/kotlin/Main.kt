@@ -133,5 +133,5 @@ private fun countApplesAndOranges(s: Int, t: Int, appleTreeLocation:Int, orangeT
 }
 
 fun main() {
-    println(gradingStudents(arrayOf(73,67,38,33)).joinToString())
+    countApplesAndOranges(7,11,5,15, arrayOf(5,1,-5), arrayOf(2,5,-4))
 }
