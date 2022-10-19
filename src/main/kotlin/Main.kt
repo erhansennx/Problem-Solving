@@ -132,6 +132,17 @@ private fun countApplesAndOranges(s: Int, t: Int, appleTreeLocation:Int, orangeT
 
 }
 
+// 13. Example -> Number Line Jumps
+private fun kangaroo(x1: Int, v1: Int, x2: Int, v2: Int): String {
+
+    return when {
+        (x1 < x2 && v1<=v2) -> "NO"
+        (x2 - x1) % (v2 - v1) == 0 ->"YES"
+        else -> "NO"
+    }
+
+}
+
 fun main() {
-    countApplesAndOranges(7,11,5,15, arrayOf(5,1,-5), arrayOf(2,5,-4))
+    print(kangaroo(0,3,4,2))
 }
