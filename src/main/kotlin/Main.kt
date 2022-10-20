@@ -143,6 +143,20 @@ private fun kangaroo(x1: Int, v1: Int, x2: Int, v2: Int): String {
 
 }
 
+// 14. Example -> Between Two Sets
+private fun getTotalX(a: Array<Int>, b: Array<Int>): Int {
+
+    var count = 0
+    val firstArrayMax = a.max().toInt()
+    val secondArrayMin = b.min().toInt()
+
+    for (i in firstArrayMax..secondArrayMin) {
+        if (a.all { i % it == 0 } && b.all { it % i == 0 }) count++
+    }
+
+    return count
+}
+
 fun main() {
-    print(kangaroo(0,3,4,2))
+    print(getTotalX(arrayOf(2,6), arrayOf(24,36)))
 }
