@@ -157,6 +157,31 @@ private fun getTotalX(a: Array<Int>, b: Array<Int>): Int {
     return count
 }
 
+// 15. Example -> Breaking the Records
+private fun breakingRecords(scores: Array<Int>): Array<Int> {
+
+    var minCounter = 0
+    var maxCounter = 0
+    var minimum = scores[0]
+    var maximum = scores[0]
+
+    for (i in 1 until scores.size) {
+
+        if (scores[i] < minimum) {
+            minimum = scores[i]
+            minCounter++
+        }
+
+        if (scores[i] > maximum) {
+            maximum = scores[i]
+            maxCounter++
+        }
+
+    }
+
+    return arrayOf(maxCounter, minCounter)
+}
+
 fun main() {
-    print(getTotalX(arrayOf(2,6), arrayOf(24,36)))
+    print(breakingRecords(arrayOf(12,24,10,33)).joinToString())
 }
