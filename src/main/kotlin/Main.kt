@@ -182,6 +182,20 @@ private fun breakingRecords(scores: Array<Int>): Array<Int> {
     return arrayOf(maxCounter, minCounter)
 }
 
+// 17. Example -> Divisible Sum Pairs
+private fun divisibleSumPairs(n: Int, k: Int, ar: Array<Int>): Int {
+    
+    var pairsCount = 0
+
+    for (i in ar.indices) {
+        for (j in i+1 until ar.size) {
+            if (((ar[i] + ar[j]) % k) == 0) pairsCount++
+        }
+    }
+
+    return pairsCount
+}
+
 fun main() {
     print(breakingRecords(arrayOf(12,24,10,33)).joinToString())
 }
