@@ -182,6 +182,21 @@ private fun breakingRecords(scores: Array<Int>): Array<Int> {
     return arrayOf(maxCounter, minCounter)
 }
 
+// 16. Example -> Subarray Division
+private fun birthday(s: Array<Int>, d: Int, m: Int): Int {
+
+    var count = 0
+    val arraySize = s.size
+
+    for (i in 0..arraySize - m) {
+        if (s.copyOfRange(i, i+m).sum() == d) {
+            count++
+        }
+    }
+
+    return count
+}
+
 // 17. Example -> Divisible Sum Pairs
 private fun divisibleSumPairs(n: Int, k: Int, ar: Array<Int>): Int {
     
